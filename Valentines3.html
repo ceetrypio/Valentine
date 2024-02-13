@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Valentine's Day 2024</title>
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        text-align: center;
+        background-color: #fce4ec;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+      }
+
+      button {
+        padding: 15px 30px;
+        font-size: 18px;
+        margin: 10px;
+        cursor: pointer;
+        border-radius: 5px;
+        background: linear-gradient(45deg, #ff4081, #e91e63);
+        color: #fff;
+        border: none;
+        transition: background 0.3s;
+      }
+
+      button:hover {
+        background: linear-gradient(45deg, #e91e63, #ff4081);
+      }
+
+      #message {
+        display: none;
+        font-size: 24px;
+        margin-top: 20px;
+        color: #e91e63;
+      }
+
+      #heart {
+        display: none;
+        font-size: 48px;
+        color: #e91e63;
+        animation: heartBeat 0.8s infinite;
+      }
+
+      @keyframes heartBeat {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.1);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes rotate {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      #flowers {
+        display: none;
+        margin-top: 20px;
+        animation: fadeIn 1s forwards;
+      }
+
+      .flower {
+        display: inline-block;
+        font-size: 36px;
+        margin: 0 10px;
+        animation: rotate 3s infinite linear;
+      }
+    </style>
+  </head>
+  <body>
+    <button onclick="showMessage()">Touch me 🌚</button>
+
+    <div id="message"></div>
+    <div id="heart">❤️</div>
+    <div id="flowers">
+      <span class="flower">🌹</span>
+      <span class="flower">👅</span>
+      <span class="flower">💐</span>
+      <span class="flower">🙈</span>
+      <span class="flower">🌺</span>
+    </div>
+
+    <script>
+      function showMessage() {
+        const messageDiv = document.getElementById("message");
+        const button = document.querySelector("button");
+        const heart = document.getElementById("heart");
+        const flowers = document.getElementById("flowers");
+
+        button.style.display = "none";
+
+        messageDiv.innerHTML =
+          "This is the corniest thing I ever did, but I love you and I wanted to ask if you'd be my Valentine, Oyinkansola?";
+        messageDiv.style.display = "block";
+
+        setTimeout(() => {
+          heart.style.display = "block";
+        }, 1000);
+
+        setTimeout(() => {
+          flowers.style.display = "inline-block";
+        }, 2000);
+      }
+    </script>
+  </body>
+</html>
